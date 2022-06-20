@@ -1,0 +1,396 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 1, 2018, 11:08:39 AM
+    Author     : Defox
+*/
+@media only screen and (max-width: 1280px){
+    .wrapper{
+        max-width: 100%;
+    }
+    .container{
+        max-width: 100%;
+    }
+    .vc_row.wpb_row.vc_inner.vc_row-fluid {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .sidenav ul li a {
+        font-size: 16px;
+        padding: 33px 16px;
+    }
+    .section_headings h1 {
+        font-size: 30px;
+        margin-top: 90px;
+    }
+    .points_image {
+        width: 400px;
+    }
+    .vc_custom_1519896175132 {
+        margin-top: 60px;
+    }
+    .pricing_detail h2 {
+        font-size: 17px;
+    }
+    .pricing_detail p {
+        font-size: 14px;
+    }
+    .pricing_details h2 {
+        font-size: 18px;
+    }
+    .pricing_details p {
+        font-size: 14px;
+    }
+    pricing_detail h2 {
+        font-size: 16px;
+    }
+    .pricing_detail p {
+        font-size: 14px;
+    }
+    .section_heading h1 {
+        font-size: 36px;
+    }
+    .help_box_heading {
+        font-size: 16px !important;
+    }
+    .help_box_image {
+        width: 170px;
+        height: 170px;
+        line-height: 170px;
+        border-radius: 90px;
+        margin-bottom: 12px !important;
+    }
+    .pricing_tables .package_first, .pricing_tables .package_third {
+        width: 90% !important;
+        margin-left: 10px !important;
+    }
+    .pricing_tables .package_second{
+        margin-right: 10px !important;
+    }
+    .pricing_price h1 {
+        font-size: 36px;
+    }
+    .pricing_price p {
+        font-size: 22px;
+    }
+    .pricing_price .wpb_wrapper h2 {
+        font-size: 40px;
+    }
+    .pricing_detail {
+        margin-bottom: 10px !important;
+    }
+    .vc_btn3.vc_btn3-size-md {
+        padding: 10px 30px !important;
+    }
+    .pricing_details {
+        margin-bottom: 14px !important;
+    }
+    .Testimonials_container h3 {
+        font-size: 40px;
+    }
+    .testimonal_info p {
+        width: 800px;
+        font-size: 16px !important;
+    }
+    .Q_faqs .vc_toggle_title {
+        font-size: 14px;
+    }
+    .vc_toggle_title h4 {
+        font-size: 16px;
+    }
+    .newsletter span {
+        font-size: 20px;
+    }
+    .ftr h2 {
+        font-size: 30px;
+    }
+    .news_fields {
+        top: 1px;
+        position: relative;
+    }
+    .banner_text a{
+       background: #fff;
+       color: #002365;
+       padding: 15px 25px !important;
+       display: inline-block;
+       margin-top: 16px !important;
+       font-size: 18px;
+       font-family: 'typo_groteskbold';
+       text-align: center;
+   }
+   .testimonial_slides {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .vc_btn3.vc_btn3-size-md {
+        padding: 8px 22px !important;
+    }
+}
+@media only screen and (max-width: 980px){
+    .sidenav ul li a {
+        font-size: 14px;
+        padding: 33px 10px;
+    }
+    .section_headings h1 {
+        font-size: 20px;
+        margin-top: 70px;
+    }
+    .points_image {
+        max-width: 320px;
+    }
+    .site-chart h4 {
+        font-size: 12px;
+    }
+    .pricing_detail h2 {
+        font-size: 14px;
+        margin: 30px 0px 15px !important;
+    }
+    .pricing_details h2 {
+        font-size: 15px;
+    }
+    .pricing_read_mores {
+        margin-top: 8px !important;
+    }
+    .Testimonials_container h3 {
+        font-size: 30px;
+    }
+    .testimonal_info p {
+        width: 600px;
+        font-size: 14px !important;
+    }
+    .pricing_tables {
+        padding: 60px 0 100px;
+    }
+    .Q_faq_imag {
+        max-width: 336px;
+    }
+    .Q_faqs .vc_toggle_title {
+        font-size: 10px;
+    }
+    .vc_toggle_title h4 {
+        font-size: 12px;
+    }
+    .Q_faqs p {
+        font-size: 12px;
+    }
+    .Q_faqs {
+        margin-bottom: 10px !important;
+    }
+    .sign_up {
+        width: 838px;
+    }
+    .ftr p {
+        font-size: 12px;
+    }
+    .ftr ul li {
+        font-size: 14px;
+    }
+    footer {
+        background: #132541;
+        padding: 40px 0px;
+    }
+}
+@media only screen and (max-width: 800px){
+    .banner_text a{
+       background: #fff;
+       color: #002365;
+       padding: 12px 20px !important;
+       display: inline-block;
+       margin-top: 16px !important;
+       font-size: 18px;
+       font-family: 'typo_groteskbold';
+       text-align: center;
+   }
+}
+@media only screen and (max-width: 768px){
+    /*
+    =============================
+         RESPONSIVE MENU
+    =============================
+    */
+    .site-menu {
+        text-align: right;
+        padding-top: 20px;
+        padding-right: 27px;
+        color: #fff;
+    }
+     .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    .closebtn {
+        display: block !important;
+    }
+    .menu-bar-icon {
+        display: block;
+    }
+    .sidenav ul li {
+        display: block;
+        font-size: 18px;
+        text-align: left;
+    }
+    .sidenav ul li a {
+        font-size: 18px;
+        padding: 10px 10px;
+    }
+    
+    /*
+    ==========================
+            SITE RESPONSIVE
+    ==========================
+    */
+    .help_section {
+        padding: 60px 0;
+        background-color: #fff;
+    }
+    .help_box_image {
+        width: 150px;
+        height: 150px;
+        line-height: 170px;
+        border-radius: 90px;
+    }
+    .sign_up {
+        width: 770px;
+    }
+    .newsletter span {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .points_image {
+        float: none;
+        margin: 0 auto;
+    }
+    .Q_faq_imag {
+        float: none;
+        margin: 0 auto;
+    }
+    .news_fields {
+        width: 200px;
+    }
+    .sign_up {
+        max-width: 100%;
+    }
+    .newsletter #submit {
+        padding: 11px 12px;
+        font-size: 12px;
+    }
+    .testimonal_info p {
+        max-width: 100%;
+        font-size: 14px !important;
+    }
+    .section_heading {
+        margin-bottom: 60px !important;
+    }
+   .Q_faq_imag {
+        position: relative;
+        left: -20px;
+    }
+    .vc_custom_1519896175132 {
+        position: relative;
+        left: 15px;
+    }
+}
+@media only screen and (max-width: 600px){
+     .banner_text a{
+       background: #fff;
+       color: #002365;
+       padding: 12px 16px !important;
+       display: inline-block;
+       margin-top: 16px !important;
+       font-size: 20px;
+       font-family: 'typo_groteskbold';
+       text-align: center;
+   }
+}
+@media only screen and (max-width: 480px){
+     #site-chart {
+        width: 100%;
+        float: none;
+    }
+    .newsletter span {
+        float: none;
+        display: inherit;
+    }
+    .section_heading h1 {
+        font-size: 26px;
+    }
+    .heading_small p {
+        font-size: 16px;
+    }
+    
+    .site-menu {
+        padding-top: 6px;
+    }
+     .site-logo img {
+        max-width: 70%;
+        height: 50px;
+    }
+    .banner_text a{
+       background: #fff;
+       color: #002365;
+       padding: 10px 12px !important;
+       display: inline-block;
+       margin-top: 16px !important;
+       font-size: 20px;
+       font-family: 'typo_groteskbold';
+       text-align: center;
+   }
+
+}
+@media only screen and (max-width: 360px){
+    .site-logo img {
+        max-width: 70%;
+        height: 40px;
+    }
+      .banner_text a{
+       background: #fff;
+       color: #002365;
+       padding: 8px 10px !important;
+       display: inline-block;
+       margin-top: 16px !important;
+       font-size: 20px;
+       font-family: 'typo_groteskbold';
+       text-align: center;
+   }
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
