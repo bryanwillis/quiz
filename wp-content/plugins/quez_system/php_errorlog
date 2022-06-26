@@ -1,0 +1,5 @@
+[01-Oct-2021 14:04:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function plugin_dir_path() in /home/customer/www/assessment.globalcoachcenter.com/public_html/wp-content/plugins/quez_system/core/core.php:3
+Stack trace:
+#0 /home/customer/www/assessment.globalcoachcenter.com/public_html/wp-content/plugins/quez_system/index.php(11): include()
+#1 {main}
+  thrown in /home/customer/www/assessment.globalcoachcenter.com/public_html/wp-content/plugins/quez_system/core/core.php on line 3

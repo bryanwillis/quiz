@@ -25,7 +25,7 @@
 </div>
     <div class="copy_right">
         <div class="container">
-            <center><p>&COPY; <?php echo date('Y'); ?> Global Coach Center</p></center>
+            <center><p>&COPY;2019 Global Coach Center</p></center>
         </div>
     </div>
         <p id="back-top">

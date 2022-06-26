@@ -54,6 +54,9 @@ class basicPlugin_database{
         $sql =  "CREATE TABLE `$questions` (
                     `id` int(11) NOT NULL AUTO_INCREMENT,
                     `name` varchar(255) NOT NULL,
+                    `first_text` varchar(255) NOT NULL,
+                    `last_text` varchar(255) NOT NULL,
+                    `veriable` varchar(255) NOT NULL,
                     `description` text NOT NULL,
                     `status` int(11) NOT NULL,
                     PRIMARY KEY (`id`)
@@ -144,6 +147,42 @@ class basicPlugin_database{
         $wpdb->stats = $user_quiz; 
         //add the shortcut so you can use $wpdb->stats
         $wpdb->tables[] = str_replace($wpdb->prefix, '', $user_quiz); 
+    }
+    
+    
+    /*
+     ===================
+     *   country_answer
+     * ===================
+    */
+    //create the name of the table including the wordpress prefix (wp_ etc)
+     $country_answer = $wpdb->prefix . "country_answer";
+
+    //$wpdb->show_errors(); 
+     
+    //check if there are any tables of that name already
+    if($wpdb->get_var("show tables like '$country_answer'") !== $country_answer) 
+    {
+        //create your sql
+        $sql =  "CREATE TABLE `$country_answer` (
+                    `id` int(11) NOT NULL AUTO_INCREMENT,
+                    `question_id` int(11) NOT NULL,
+                    `total` int(11) NOT NULL,
+                    `country_name` varchar(255) NOT NULL,
+                    PRIMARY KEY (`id`)
+                   ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+    }  
+
+    //include the wordpress db functions
+     require_once(ABSPATH . 'wp-admin/upgrade-functions.php');
+           dbDelta($sql);
+     
+    //register the new table with the wpdb object
+    if (!isset($wpdb->stats)) 
+    {
+        $wpdb->stats = $country_answer; 
+        //add the shortcut so you can use $wpdb->stats
+        $wpdb->tables[] = str_replace($wpdb->prefix, '', $country_answer); 
     }
     
   }

@@ -1,3 +1,6 @@
+<script>
+    window.location.href = '<?php echo site_url(); ?>/assessment/'; 
+</script>
 <?php get_header(); ?>
 <?php
 if(have_posts()):

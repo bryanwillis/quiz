@@ -110,3 +110,8 @@ QUESTION TABLE
     text-align: left;
     margin: 6px 0px;
 }
+
+.question_description textarea {
+    width: 100%;
+    resize: none;
+}

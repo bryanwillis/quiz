@@ -52,7 +52,6 @@ function widgate_disclaimer(){
     if(function_exists('register_sidebar')){      //register sidebar
     register_sidebar(array(
         'name'=> 'ftr_logo',                     //name of sidebar
-        'id' => 'ftr_logo',
         'before_widget' => '<div class="ftr_logo">',
         'after_widget' => '</div>',
         'before_title'=>'<h2>',
@@ -62,7 +61,6 @@ function widgate_disclaimer(){
   if(function_exists('register_sidebar')){      //register sidebar
     register_sidebar(array(
         'name'=> 'right_sidebar',                     //name of sidebar
-        'id' => 'right_sidebar',
         'before_widget' => '<div class="right_sidebar">',
         'after_widget' => '</div>',
         'before_title'=>'<h2>',
@@ -73,7 +71,6 @@ function widgate_disclaimer(){
   if(function_exists('register_sidebar')){      //register sidebar
     register_sidebar(array(
         'name'=> 'foetr_widget_1',                     //name of sidebar
-        'id' => 'foetr_widget_1', 
         'before_widget' => '<div class="ftr_main">',
         'after_widget' => '</div>',
         'before_title'=>'<h2>',
@@ -83,7 +80,6 @@ function widgate_disclaimer(){
   if(function_exists('register_sidebar')){      //register sidebar
     register_sidebar(array(
         'name'=> 'foetr_widget_2',                     //name of sidebar
-        'id'=> 'foetr_widget_2',                     //name of sidebar
         'before_widget' => '<div class="ftr_resources">',
         'after_widget' => '</div>',
         'before_title'=>'<h2>',
@@ -93,7 +89,6 @@ function widgate_disclaimer(){
   if(function_exists('register_sidebar')){      //register sidebar
     register_sidebar(array(
         'name'=> 'foetr_widget_3',                     //name of sidebar
-        'id'=> 'foetr_widget_3',                     //name of sidebar
         'before_widget' => '<div class="ftr_Concepts">',
         'after_widget' => '</div>',
         'before_title'=>'<h2>',
@@ -305,46 +300,3 @@ function um_custom_validate_team_code( $key, $array, $args ) {
     }
 }
 add_action( 'um_custom_field_validation_team_code', 'um_custom_validate_team_code', 30, 3 );
-
-/* add new tab called "mytab" */
-
-add_filter('um_account_page_default_tabs_hook', 'assessment_tab_in_um', 100 );
-function assessment_tab_in_um( $tabs ) {
-    $tabs[800]['assessment']['icon'] = 'um-faicon-pencil';
-    $tabs[800]['assessment']['title'] = 'Assessment';
-    $tabs[800]['assessment']['custom'] = true;
-    $tabs[800]['assessment']['show_button'] = false;
-    return $tabs;
-}
-    
-/* make our new tab hookable */
-
-add_action('um_account_tab__assessment', 'um_account_tab__mytab');
-function um_account_tab__assessment( $info ) {
-    global $ultimatemember;
-    extract( $info );
-
-    $output = $ultimatemember->account->get_tab_output('assessment');
-    if ( $output ) { echo $output; }
-}
-
-/* Finally we add some content in the tab */
-
-add_filter('um_account_content_hook_assessment', 'um_account_content_hook_assessment');
-function um_account_content_hook_assessment( $output ){
-    ob_start();
-    ?>
-        
-    <div class="um-field">
-        
-        <!-- Here goes your custom content -->
-        <a href="/assessment/">Go to assessment page</a>
-        
-    </div>      
-        
-    <?php
-        
-    $output .= ob_get_contents();
-    ob_end_clean();
-    return $output;
-}

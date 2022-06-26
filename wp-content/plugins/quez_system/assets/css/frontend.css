@@ -1,0 +1,280 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 10, 2018, 9:52:38 AM
+    Author     : amfan
+*/
+.c_compare {
+
+    margin: 50px 0 0 0;
+    border-top: 1px solid #ccc;
+    padding: 40px 0 0 0;
+
+}
+.quiz_infornt h4 {
+
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 0 0;
+    font-family: sans-serif !important;
+    color: #333;
+
+}
+.myquestios_ans.error {
+
+    border: 1px dotted red;
+
+}
+.quiz_Pagnxt {
+
+    font-size: 16px;
+    background-color: #0496E5;
+    color: #fff;
+    min-width: 100px;
+    height: 40px;
+    border: 0;
+    border-radius: 24px;
+    margin: 20px 0 0 0;
+
+}
+.back_button {
+
+    font-size: 16px;
+    background-color: #0a3959;
+    color: #fff;
+    min-width: 100px;
+    height: 40px;
+    border: 1px solid #0a3959;
+    border-radius: 4px;
+    margin: 20px 10px 0 0;
+    padding: 10px 20px;
+    display: none;
+}
+.question_results ul {
+
+    margin: 10px 0;
+    padding: 0;
+
+}
+.question_results ul li {
+
+    list-style: none;
+    display: inline-block;
+    width: 12.6%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 0 0 -5px;
+
+}
+.question_results ul li:first-child, .question_results ul li:last-child {
+
+    border: 1px solid transparent;
+    font-size: 12px;
+    text-transform: lowercase;
+
+}
+.inner_pages_content h1 {
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400 !important;
+
+}
+.inner_pages_content .um * {
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+.question_results ul li.active {
+
+    background-color: green;
+    color: #fff;
+
+}
+.quiz_infornt {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+	background-color: #ECECEC;
+    padding: 10 100 10;
+}
+.z_copy_right {
+
+    position: absolute;
+    bottom: -43px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 12px;
+	background-color: #ECECEC;
+    margin-left: -100;
+
+}
+.country_compare input {
+    margin: 0 5px 10px 0px !important;
+}
+.country_compare button {
+    font-size: 16px;
+    background-color: #0a3959;
+    color: #fff;
+    min-width: 100px;
+    height: 40px;
+    border: 1px solid #0a3959;
+    border-radius: 4px;
+    margin: 20px 0 0 0;
+}
+.submit_assessment {
+
+    font-size: 16px;
+    background-color: #0a3959;
+    color: #fff;
+    min-width: 100px;
+    height: 40px;
+    border: 1px solid #0a3959;
+    border-radius: 4px;
+    margin: 10px 0 0 0;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 20px;
+    transition: 0.3s;
+
+}
+.submit_assessment:hover{
+    background-color: #042135;
+    color: #fff;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .myquestios_ans {
+        width: 100% !important;
+        display: inline-block !important;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+    }
+    .myquestios_ans .ans_inradion {
+        width: 100% !important;
+    }
+    .quiz_infornt {
+        width: 100%;
+    }
+}
+
+.progress_bar ul {
+    margin: 0 0 30px 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+.progress_bar ul li {
+    list-style: none;
+    display: inline-block;
+    height: 24px;
+    line-height: 10px;
+    font-size: 10px;
+    width: 6%;
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    margin: 0 -3px;
+}
+.progress_bar ul li a{
+    color: #0496e4;
+    display: block;
+}
+.progress_bar ul li.progress_active {
+
+    background-color: #0496e4;
+
+}
+.progress_bar ul li.progress_active a{
+    color: #0496e4;
+}
+
+.quiz_question-box {
+	background-color: #FFF;
+	padding: 10 10 10 20;
+	border-radius: 30px;
+	margin-bottom: 15px;
+}
+
+.loding_script {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+.loding_script.active {
+    display: flex;
+}
+.loding_script img {
+    max-width: 100px;
+    max-height: 100px;
+}
+.country_compare ul {
+
+    margin: 0;
+    padding: 30px 0 0 0;
+
+}
+.country_compare ul li {
+
+    list-style: none;
+    display: inline-block;
+    width: 15%;
+
+}
+.result_title {
+    text-align: center;
+    font-size: 36px !important;
+    padding: 0 0 30px 0;
+}
+.progress_bar ul li:last-child {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .xs-text-center{text-align: center !important;}
+}
+@media only screen and (max-width: 480px) {
+    .question_results ul li{
+        width: 16%;
+    }
+    .question_results ul li:first-child, .question_results ul li:last-child {
+
+        border: 1px solid transparent;
+        font-size: 12px;
+        text-transform: lowercase;
+        width: 100%;
+
+    }
+    .question_results {
+
+        text-align: center;
+
+    }
+    .country_compare ul li {
+
+        list-style: none;
+        display: inline-block;
+        width: auto;
+        padding: 5px 20px 5px 0;
+
+    }
+    .question_results ul li:first-child {
+
+        text-align: left !important;
+
+    }
+    .question_results ul li:last-child {
+
+        text-align: right !important;
+
+    }
+}

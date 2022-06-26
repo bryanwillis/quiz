@@ -9,11 +9,11 @@
                $this->add();
             }
             elseif ($do == 'edit'){
-                $this->edit();             
-        }
+                    $this->edit();             
+            }
             elseif ($do=='delete'){
-                $this->delete();
-        }
+                    $this->delete();
+            }
 
     } else {     
             global $wpdb;
@@ -22,7 +22,7 @@
                 $get_data = $wpdb->get_results( "SELECT * FROM $table_name ORDER BY id DESC" ); //  !call any where
                 $total_query = "SELECT COUNT(*) FROM $table_name";
                 $total = $wpdb->get_var( $total_query );
-                $items_per_page = 4;
+                $items_per_page = 20;
                 $page = isset( $_GET['cpage'] ) ? abs( (int) $_GET['cpage'] ) : 1;
                 $offset = ( $page * $items_per_page ) - $items_per_page;
                 $latestposts = $wpdb->get_results( $query . " LIMIT $offset, $items_per_page" );
@@ -31,6 +31,7 @@
             <div class="add_questions">
                 <h3 class="wp-heading-inline">Add Question</h3>
                 <a href="?page=questions&do=add" class="page-title-action">Add New</a>
+                <a href="?page=country-answer&do=add" class="page-title-action">Add Country Answer</a>
             </div>
             <table class="wp-list-table widefat fixed striped posts">
             <tr>
@@ -86,22 +87,36 @@
    public function add(){
       
        if(isset($_POST['submit'])){
-           global $wpdb;
+            global $wpdb;
             $table_questions = $wpdb->prefix . "questions";
+            $count = $wpdb->get_results( "SELECT * FROM $table_questions" );
+            $count = count($count);
             $name = $_POST['qs_name'];
+            $first_text = $_POST['first_text'];
+            $last_text = $_POST['last_text'];
+            $first_text_description = $_POST['first_text_description'];
+            $last_text_description = $_POST['last_text_description'];
+            $veriable = $_POST['veriable'];
             $desc = $_POST['description_id'];
             $status = $_POST['status'];
+            $id = $count+1;
                 $wpdb->insert(
                 $table_questions, 
-                array( 
+                array(
+                    'id'=>$id,
                     'name' => $name,
+                    'first_text' => $first_text,
+                    'last_text' => $last_text,
+                    'first_text_description'=> $first_text_description,
+                    'last_text_description'=> $last_text_description,
+                    'veriable' => $veriable,
                     'description'=> $desc,
                     'status'=> $status
                 )
             );
             
                 $table_questions = $wpdb->prefix . "questions";
-                $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE name = '$name'");
+                $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE id = $id");
                 
                 $table_question_ans = $wpdb->prefix . "question_answers";
                     $question_id =  $row->id;
@@ -120,7 +135,7 @@
                         
                    
                 $table_questions = $wpdb->prefix . "questions";
-                $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE name = '$name'");
+                $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE id = $id");
                 
                 $table_question_ans = $wpdb->prefix . "question_answers";
                     $question_id = $row->id;
@@ -139,7 +154,7 @@
                         
                        
                     $table_questions = $wpdb->prefix . "questions";
-                    $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE name = '$name'");    
+                    $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE id = $id");    
                         
                     $table_question_ans = $wpdb->prefix . "question_answers";
                     $question_id = $row->id;
@@ -158,7 +173,7 @@
                       
                      
                     $table_questions = $wpdb->prefix . "questions";
-                    $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE name = '$name'"); 
+                    $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE id = $id"); 
                     
                     $table_question_ans = $wpdb->prefix . "question_answers";
                     $question_id = $row->id;
@@ -177,7 +192,7 @@
                       
                        
                     $table_questions = $wpdb->prefix . "questions";
-                    $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE name = '$name'");  
+                    $row = $wpdb->get_row("SELECT * FROM $table_questions WHERE id = $id");  
                     
                     $table_question_ans = $wpdb->prefix . "question_answers";
                     $question_id = $row->id;
@@ -207,6 +222,26 @@
             <div class="question_name">
                 <input name="qs_name" required size="30" value="" placeholder="Enter Name here" id="qs_name"  type="text"><br>
             </div><br><br>
+            
+            <div class="question_name">
+                <input name="first_text" required size="30" value="" placeholder="Enter First Text" id="first_text"  type="text"><br>
+            </div><br>
+            
+            <div class="question_description required">
+                <textarea rows="3" name="first_text_description" required placeholder="Enter First Text Description" id="first_text_description"  type="text"><?php echo $row->first_text_description ?></textarea><br>
+            </div><br>
+
+            <div class="question_name">
+                <input name="last_text" required size="30" value="" placeholder="Enter Last Text" id="last_text"  type="text"><br>
+            </div><br>
+
+            <div class="question_description required">
+                <textarea rows="3" name="last_text_description" required size="30" placeholder="Enter Last Text Description" id="last_text_description"  type="text"><?php echo $row->last_text_description ?></textarea><br>
+            </div><br>
+            
+            <div class="question_name">
+                <input name="veriable" required size="30" value="" placeholder="Enter Veriable" id="veriable"  type="text"><br>
+            </div><br>
             
             <div class="question_description required">
                 <?php wp_editor("","description_id"); ?>
@@ -317,13 +352,23 @@
            
             if(isset($_POST['submit'])){
                 $name = $_POST['qs_name'];
+                $first_text = $_POST['first_text'];
+                $last_text = $_POST['last_text'];
+                $veriable = $_POST['veriable'];
                 $desc = $_POST['description_id'];
+                $first_text_description = $_POST['first_text_description'];
+                $last_text_description = $_POST['last_text_description'];
                 $status = $_POST['status'];
-                $wpdb->update( 
+                $wpdb->update(
                 $table_questions, 
                    array( 
                         'name' => $name,
+                       'first_text' => $first_text,
+                       'last_text' => $last_text,
+                       'veriable' => $veriable,
                         'description'=> $desc,
+                        'first_text_description'=> $first_text_description,
+                        'last_text_description'=> $last_text_description,
                         'status'=> $status
                ),
                 array( 'id' => $id )
@@ -358,6 +403,26 @@
                 <div class="question_name">
                     <input name="qs_name" required size="30" value="<?php echo $row->name ?>" placeholder="Enter Name here" id="qs_name"  type="text"><br>
                 </div><br><br>
+                
+                <div class="question_name">
+                    <input name="first_text" required size="30" value="<?php echo $row->first_text ?>" placeholder="Enter First Text" id="first_text"  type="text"><br>
+                </div><br>
+
+                <div class="question_description required">
+                    <textarea rows="3" name="first_text_description" required placeholder="Enter First Text Description" id="first_text_description"  type="text"><?php echo $row->first_text_description ?></textarea><br>
+                </div><br>
+
+                <div class="question_name">
+                    <input name="last_text" required value="<?php echo $row->last_text ?>" placeholder="Enter Last Text" id="last_text"  type="text"><br>
+                </div><br>
+
+                <div class="question_description required">
+                    <textarea rows="3" name="last_text_description" required size="30" placeholder="Enter Last Text Description" id="last_text_description"  type="text"><?php echo $row->last_text_description ?></textarea><br>
+                </div><br>
+
+                <div class="question_name">
+                    <input name="veriable" required size="30" value="<?php echo $row->veriable ?>" placeholder="Enter Veriable" id="veriable"  type="text"><br>
+                </div><br>
 
                 <div class="question_description required">
                     <?php wp_editor( $row->description, "description_id"); ?>
