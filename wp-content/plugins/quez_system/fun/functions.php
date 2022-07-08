@@ -452,7 +452,7 @@ function generate_pdf_team_report_shortcode() {
   
   
 	$result .= '<div id="header" style="background: #0496e4; height: 90px;">
-		<div class="left_text">Team Cultural Blueprint Comparison Report</div><div class="logo_right"><img style="padding-top: 16px;" src="https://assessment.globalcoachcenter.com/wp-content/themes/power/images/ICBI_Logo_White_Globe190.png"  width="111" alt="ICBI"></div>
+		<div class="left_text">Team Cultural Blueprint Comparison Report</div><div class="logo_right"><img style="padding-top: 16px;" src="https://assessment.globalcoachcenter.com/wp-content/themes/power/images/ICBI_Logo_White_Globe190.png" width="111" alt="ICBI"></div>
 	</div>
     <div id="footer"><ul><li>Individual Cultural Blueprint Indicator™, All Rights Reserved</li></ul></div>
     ';
@@ -464,6 +464,7 @@ function generate_pdf_team_report_shortcode() {
     $result .= '<h1 style="margin-bottom: 20px; text-align:center; width: 100%; font-size: 30px;" class="result_title">ICBI Team Report for ' . $data_team[0]->team_name . '</h1>';
     $result .= '<p style="margin-bottom: 20px;">The ICBI™ team report is a behavior, habit, and belief-based assessment that empowers individuals to learn about their cultural preferences and compare them with other team members to learn about the different communication and workstyles on the team. The report consists of 16 orientations of cultural differences. There are no right or wrong answers.</p>';
     $result .= '<p style="margin-bottom: 20px;">The ICBI™ is designed to help individuals and teams to increase productivity, improve relationships, and promote efficient communications within multi-cultural environments. The goal is to create awareness of each team member’s unique styles, so the team can leverage strengths, build a more inclusive environment, and address challenges proactively from a place of knowledge and respect. With a trained facilitator or team leader, brainstorm strategies and create agreements to form cultural alliances within your team.</p>';
+
     $result .= '<div style="height: 350px; width: 100%; display: block"></div>';
     $result .= '<div class="page_break"></div>';
 
@@ -593,23 +594,22 @@ function generate_pdf_team_nonames_report_shortcode() {
     global $wpdb;
 
     $team_code = $_GET['team_code'];
-    $result                = '<style></style>';
-    $result .= '<style>@page { margin: 100px 50px; }.page_break { page-break-before: always; }#footer ul{margin:0; padding: 0;}#footer ul li{list-style: none;margin: 0 0 0 0;text-align:center;font-size:15px} #footer {display: inline-block; position: fixed; left: 0px; bottom: -100px; right: 0px; height: 50px;}.left_text{float: left; font-size: 20px; width: 70%; padding: 15px 0 0 0;}.logo_right{float: right; width: 16%}#header {display: inline-block; position: fixed; left: 0px; top: -95px; right: 0px; height: 65px;}.left_right{width: 90%; display: inline-block; clear:both; margin: 5px 0 0 0; height: 30px;}.left_right .left{width: 50%; float: left; text-align:left;}.left_right .right{width: 40%; float: right; text-align:right; }.good{color: red} .question_no h1{font-size: 24px; margin-bottom:0;} table{padding: 0 0 15px 0; width:100%; border-collapse: collapse;} table, th, td {border: 1px solid #555; width: 13%;text-align: center; font-size: 10px; padding: 3px 0;} td.active{background-color: #606060;}th.active{background-color: #0496e4;color:white;}..table-two-page, .table-two-page th, .table-two-page td {border:none;text-align:left;width:auto;font-size:11px;padding: 0 2px;}.table-two-page .first-td{padding-left: 15px;width: 70px;}</style>';
+    $result = '<style></style>';
+    $result .= '<style>@page{margin: 100px 50px}.page_break{page-break-before: always}#footer ul{margin: 0;padding: 0}#footer ul li{list-style: none;margin: 0 0 0 0;text-align: center;font-size: 15px}#footer{display: inline-block;position: fixed;left: 0px;bottom: -100px;right: 0px;height: 50px}.left_text{color: white;float: left;font-size: 20px;width: 60%;padding: 35px 0 0 50px}.logo_right{float: right;width: 20%}#header{display: inline-block;position: fixed;left: -50px;top: -100px;right: -40px;height: 65px;width: 105%}.left_right{width: 100%;display: inline-block;clear: both;margin: 5px 0 0 0;height: 30px}.left_right .left{width: 50%;float: left;text-align: left}.left_right .right{width: 40%;float: right;text-align: right}.good{color: red}.question_no h1{font-size: 24px;margin-bottom: 0}table{padding: 0 0 15px 0;width: 100%;border-collapse: collapse}table,th,td{border: 1px solid #555;width: 13%;text-align: center;font-size: 10px;padding: 3px 0}td.active{background-color: #606060}th.active{background-color: #0496e4}.table-two-page,.table-two-page th,.table-two-page td{border: none;text-align: left;width: auto;font-size: 11px;padding: 0 2px}.table-two-page .first-td{padding-left: 15px;width: 70px}</style>';
     $result .= '<style>.question_content{font-size: 16px;}</style>';
-    $result .= '<div id="header"><div class="left_text">Team Cultural Blueprint Comparison Report</div><div class="logo_right"><img src="http://assessment.globalcoachcenter.com/wp-content/themes/power/images/logo_right.png" alt="ICBI"></div></div>
-    <div id="footer"><ul><li>For more information, visit www.globalcoachcenter.com</li><li>Individual Cultural Blueprint Indicator™, All Rights Reserved</li></ul></div>
+$result .= '<div id="header" style="background: #0496e4; height: 90px;"><div class="left_text">Team Cultural Blueprint Comparison Report (Anonymous)</div><div class="logo_right"><img style="padding-top: 16px;" src="https://assessment.globalcoachcenter.com/wp-content/themes/power/images/ICBI_Logo_White_Globe190.png"  width="111" alt="ICBI"></div></div>
+    <div id="footer"><ul><li>Individual Cultural Blueprint Indicator™, All Rights Reserved</li></ul></div>
     ';
-    
-    
+
     $table_team = $wpdb->prefix . "team";
     $data_team  = $wpdb->get_results("SELECT * FROM $table_team WHERE team_code='$team_code'");
 
     $result .= '<h1 style="margin-bottom: 20px; text-align:center; width: 100%; font-size: 30px;" class="result_title">ICBI Team Report for ' . $data_team[0]->team_name . '</h1>';
     $result .= '<p style="margin-bottom: 20px;">The ICBI™ team report is a behavior, habit, and belief-based assessment that empowers individuals to learn about their cultural preferences and compare them with other team members to learn about the different communication and workstyles on the team. The report consists of 16 orientations of cultural differences. There are no right or wrong answers.</p>';
     $result .= '<p style="margin-bottom: 20px;">The ICBI™ is designed to help individuals and teams to increase productivity, improve relationships, and promote efficient communications within multi-cultural environments. The goal is to create awareness of each team member’s unique styles, so the team can leverage strengths, build a more inclusive environment, and address challenges proactively from a place of knowledge and respect. With a trained facilitator or team leader, brainstorm strategies and create agreements to form cultural alliances within your team.</p>';
+
     $result .= '<div style="height: 350px; width: 100%; display: block"></div>';
     $result .= '<div class="page_break"></div>';
-    $result .= '<h2 style="margin-bottom: 20px; text-align:center; width: 100%; font-size: 18px;" >Individual Cultural Blueprint Indicator (ICBI™)</h2>';
 
     $result .= '<style>'
                     . '.f_first_last td{background-color: #fff;}.f_question_results td{background-color: #fff;}.f_question_results td.active{background-color:#282359;color:white;}.yellow_bg .active{background-color: #282359 !important;color:white;}'

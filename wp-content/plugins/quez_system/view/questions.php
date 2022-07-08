@@ -1,4 +1,4 @@
-<?php echo "<center><h1>QUSTIONS</h1></center>"; ?>
+<?php echo "<center><h1>QUESTIONS</h1></center>"; ?>
 <div class="wrap">
     <?php
     class  user_questions{
